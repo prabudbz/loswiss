@@ -164,4 +164,23 @@ html.is-animating .transition-fade {
   transition-delay: 0.25s;
 }
 
-
+/* Optimize hero fold for small height laptop screens (like 13" MacBooks) */
+@media (max-height: 850px) and (min-width: 768px) {
+  .hero-content {
+    padding-top: 6rem !important; /* pt-24 */
+    padding-bottom: 2rem !important; /* pb-8 */
+  }
+  .hero-content h1 {
+    font-size: 4.5rem !important; /* text-7xl */
+  }
+  .hero-content p {
+    font-size: 1rem !important; /* text-base */
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
+  }
+  /* target the button wrapper */
+  .hero-content .mt-16,
+  .hero-content .mt-8 {
+    margin-top: 1.5rem !important; /* mt-6 */
+  }
+}
