@@ -208,24 +208,26 @@ function initPage() {
     }
   });
 
-  // Highlight active nav link (robust normalization of extensions and slashes)
+  // Highlight active nav link (segment-based matching for subdirectory hosting)
   let currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
-  if (!currentPath) currentPath = '/index';
+  const pathSegment = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index';
   
   document.querySelectorAll('.nav-link').forEach(link => {
     link.classList.remove('text-brand-accent');
-    let href = link.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '');
-    if (!href) href = '/index';
-    if (href === currentPath) {
+    let href = link.getAttribute('href') || '';
+    href = href.replace(/^\//, '').replace(/\.html$/, '').replace(/\/$/, '');
+    const hrefSegment = href.substring(href.lastIndexOf('/') + 1) || 'index';
+    if (hrefSegment === pathSegment) {
       link.classList.add('text-brand-accent');
     }
   });
 
   document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.classList.remove('text-brand-accent');
-    let href = link.getAttribute('href').replace(/\.html$/, '').replace(/\/$/, '');
-    if (!href) href = '/index';
-    if (href === currentPath) {
+    let href = link.getAttribute('href') || '';
+    href = href.replace(/^\//, '').replace(/\.html$/, '').replace(/\/$/, '');
+    const hrefSegment = href.substring(href.lastIndexOf('/') + 1) || 'index';
+    if (hrefSegment === pathSegment) {
       link.classList.add('text-brand-accent');
     }
   });
