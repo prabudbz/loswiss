@@ -24,9 +24,25 @@ function inlineCssPlugin() {
   };
 }
 
+import { resolve } from 'path';
+
 export default defineConfig({
   plugins: [
     tailwindcss(),
     inlineCssPlugin(),
   ],
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        about: resolve(__dirname, 'about.html'),
+        services: resolve(__dirname, 'services.html'),
+        contact: resolve(__dirname, 'contact.html'),
+        accessibility: resolve(__dirname, 'accessibility.html'),
+        fraud: resolve(__dirname, 'fraud.html'),
+        legal: resolve(__dirname, 'legal.html'),
+        privacy: resolve(__dirname, 'privacy.html')
+      }
+    }
+  }
 })
