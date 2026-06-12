@@ -5,7 +5,8 @@ import Swup from 'swup'
 import SwupHeadPlugin from '@swup/head-plugin'
 import SwupScriptsPlugin from '@swup/scripts-plugin'
 import { 
-  createIcons, 
+  createIcons,
+  ArrowUp, 
   Minus, 
   ArrowRight, 
   ShieldCheck, 
@@ -89,6 +90,24 @@ function initGlobalUI() {
   if (window.scrollY > 50) {
     header.classList.add('bg-brand-dark/95', 'backdrop-blur-md', 'border-white/10');
     header.classList.remove('bg-transparent', 'border-transparent');
+  }
+
+  // Back to Top Logic
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+        backToTop.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      } else {
+        backToTop.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+        backToTop.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 
   // Theme Switcher Logic (Multiple buttons for desktop & mobile)
