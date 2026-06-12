@@ -4,7 +4,43 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Swup from 'swup'
 import SwupHeadPlugin from '@swup/head-plugin'
 import SwupScriptsPlugin from '@swup/scripts-plugin'
-import { createIcons, icons } from 'lucide'
+import { 
+  createIcons, 
+  Minus, 
+  ArrowRight, 
+  ShieldCheck, 
+  Users, 
+  Lock, 
+  TrendingUp, 
+  Zap, 
+  Globe, 
+  Award, 
+  Diamond, 
+  PiggyBank, 
+  Briefcase, 
+  Repeat, 
+  User, 
+  Building, 
+  Factory, 
+  Tractor, 
+  Smartphone, 
+  CreditCard, 
+  Quote, 
+  Check, 
+  Shield, 
+  HeartHandshake, 
+  UserCheck, 
+  Lightbulb, 
+  Globe2, 
+  ShieldAlert, 
+  Info, 
+  PhoneCall, 
+  Mail, 
+  MapPin, 
+  Clock, 
+  Send, 
+  Palette
+} from 'lucide'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -222,7 +258,44 @@ function initPage() {
   ScrollTrigger.getAll().forEach(t => t.kill());
 
   // Initialize Lucide Icons
-  createIcons({ icons });
+  createIcons({
+    icons: {
+      Minus, 
+      ArrowRight, 
+      ShieldCheck, 
+      Users, 
+      Lock, 
+      TrendingUp, 
+      Zap, 
+      Globe, 
+      Award, 
+      Diamond, 
+      PiggyBank, 
+      Briefcase, 
+      Repeat, 
+      User, 
+      Building, 
+      Factory, 
+      Tractor, 
+      Smartphone, 
+      CreditCard, 
+      Quote, 
+      Check, 
+      Shield, 
+      HeartHandshake, 
+      UserCheck, 
+      Lightbulb, 
+      Globe2, 
+      ShieldAlert, 
+      Info, 
+      PhoneCall, 
+      Mail, 
+      MapPin, 
+      Clock, 
+      Send, 
+      Palette
+    }
+  });
 
   // Highlight active nav link (robust normalization of extensions and slashes)
   let currentPath = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
