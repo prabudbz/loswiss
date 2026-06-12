@@ -27,6 +27,7 @@ function inlineCssPlugin() {
 import { resolve } from 'path';
 
 export default defineConfig({
+  base: '/loswiss/',
   plugins: [
     tailwindcss(),
     inlineCssPlugin(),
