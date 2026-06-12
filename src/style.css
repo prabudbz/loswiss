@@ -233,8 +233,8 @@ html.is-animating .transition-fade {
     transition: none !important;
   }
   /* Inline text-only links (like View All) - only change text color on tap */
-  a[href*="services.html"]:not(.border):active,
-  a[href*="contact.html"]:not(.border):active {
+  a[href*="services.html"]:not(.border):not(.mobile-nav-link):active,
+  a[href*="contact.html"]:not(.border):not(.mobile-nav-link):active {
     color: var(--color-brand-accent) !important;
     background-color: transparent !important;
     border-color: transparent !important;
