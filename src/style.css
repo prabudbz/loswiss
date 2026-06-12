@@ -222,10 +222,15 @@ html.is-animating .transition-fade {
   }
 }
 
-/* Hide header subtext on scroll to save space and prevent overlap */
-#main-header.scrolled a.group span.text-\[0\.74rem\] {
-  display: none !important;
-}
+/* Scale down header subtext on scroll to match LOSWISS percentage (25% reduction) */
+#main-header.scrolled a.group span.text-\[0\.74rem\],
 #main-header.scrolled a.group span.text-\[0\.76rem\] {
-  display: none !important;
+  font-size: 0.56rem !important; /* ~9px (25% reduction from 12px) */
+  margin-top: 0.2rem !important; /* compact layout */
+  letter-spacing: 0.15em !important;
+  transition: font-size 0.3s ease, margin-top 0.3s ease;
+}
+#main-header a.group span.text-\[0\.74rem\],
+#main-header a.group span.text-\[0\.76rem\] {
+  transition: font-size 0.3s ease, margin-top 0.3s ease;
 }
