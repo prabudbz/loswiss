@@ -203,7 +203,8 @@ function initPage() {
       MapPin, 
       Clock, 
       Send, 
-      Palette
+      Palette,
+      ArrowUp
     }
   });
 
