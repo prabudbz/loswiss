@@ -91,15 +91,13 @@ function initGlobalUI() {
     header.classList.remove('bg-transparent', 'border-transparent');
   }
 
-  // Theme Switcher Logic
-  const themeToggle = document.getElementById('theme-toggle');
-  if (themeToggle) {
-    // Check local storage (defaulting to gold)
-    if (localStorage.getItem('theme') === 'blue') {
-      document.documentElement.classList.add('theme-blue');
-    }
-
-    themeToggle.addEventListener('click', () => {
+  // Theme Switcher Logic (Multiple buttons for desktop & mobile)
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  if (localStorage.getItem('theme') === 'blue') {
+    document.documentElement.classList.add('theme-blue');
+  }
+  themeToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
       document.documentElement.classList.toggle('theme-blue');
       if (document.documentElement.classList.contains('theme-blue')) {
         localStorage.setItem('theme', 'blue');
@@ -107,7 +105,7 @@ function initGlobalUI() {
         localStorage.setItem('theme', 'gold');
       }
     });
-  }
+  });
 
   // Mobile Menu Logic
   const mobileBtn = document.getElementById('mobile-menu-btn');
