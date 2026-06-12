@@ -221,8 +221,8 @@ html.is-animating .transition-fade {
     transition: none;
   }
   /* Tap active states for CTA link buttons, forms, and back-to-top */
-  a[href*="services.html"]:active,
-  a[href*="contact.html"]:active,
+  a[href*="services.html"].border:active,
+  a[href*="contact.html"].border:active,
   #back-to-top:active,
   button[type="submit"]:active,
   #mobile-menu-btn:active span {
@@ -232,11 +232,25 @@ html.is-animating .transition-fade {
     transform: scale(0.95) !important;
     transition: none !important;
   }
-  /* Ensure icon turns dark inside active link buttons on tap */
-  a[href*="services.html"]:active i,
-  a[href*="contact.html"]:active i,
+  /* Inline text-only links (like View All) - only change text color on tap */
+  a[href*="services.html"]:not(.border):active,
+  a[href*="contact.html"]:not(.border):active {
+    color: var(--color-brand-accent) !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    transform: scale(0.98) !important;
+    transition: none !important;
+  }
+  /* Ensure icon turns dark inside active bordered buttons on tap */
+  a[href*="services.html"].border:active i,
+  a[href*="contact.html"].border:active i,
   button[type="submit"]:active i {
     color: var(--color-brand-dark) !important;
+  }
+  /* Ensure arrow icon turns gold/blue inside active text links on tap */
+  a[href*="services.html"]:not(.border):active i,
+  a[href*="contact.html"]:not(.border):active i {
+    color: var(--color-brand-accent) !important;
   }
 }
 
