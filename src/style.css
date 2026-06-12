@@ -47,7 +47,7 @@
 }
 
 .hero-content {
-  @apply relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-24 w-full;
+  @apply relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-12 md:pt-32 md:pb-24 w-full;
 }
 
 /* GSAP utility classes — initial state set to 0 in CSS to prevent FOUC / flicker */
