@@ -184,3 +184,24 @@ html.is-animating .transition-fade {
     margin-top: 1.5rem !important; /* mt-6 */
   }
 }
+
+/* Scroll-based Header Shrink (Saves vertical screen height on scroll) */
+#main-header {
+  transition: background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+}
+#main-header > div {
+  transition: padding-top 0.3s ease, padding-bottom 0.3s ease;
+}
+#main-header.scrolled > div {
+  padding-top: 0.6rem !important; /* py-2.5 - saving space */
+  padding-bottom: 0.6rem !important; /* py-2.5 */
+}
+/* Slightly reduce logo scaling on scroll for laptop heights */
+#main-header.scrolled a.group span.text-5xl {
+  font-size: 2.25rem !important; /* text-4xl */
+  transition: font-size 0.3s ease;
+}
+#main-header a.group span.text-5xl {
+  transition: font-size 0.3s ease;
+}
+

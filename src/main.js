@@ -78,17 +78,17 @@ function initGlobalUI() {
   // Scroll Effect for Header
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      header.classList.add('bg-brand-dark/95', 'backdrop-blur-md', 'border-white/10');
+      header.classList.add('bg-brand-dark/95', 'backdrop-blur-md', 'border-white/10', 'scrolled');
       header.classList.remove('bg-transparent', 'border-transparent');
     } else {
       header.classList.add('bg-transparent', 'border-transparent');
-      header.classList.remove('bg-brand-dark/95', 'backdrop-blur-md', 'border-white/10');
+      header.classList.remove('bg-brand-dark/95', 'backdrop-blur-md', 'border-white/10', 'scrolled');
     }
   });
   
   // Initial check
   if (window.scrollY > 50) {
-    header.classList.add('bg-brand-dark/95', 'backdrop-blur-md', 'border-white/10');
+    header.classList.add('bg-brand-dark/95', 'backdrop-blur-md', 'border-white/10', 'scrolled');
     header.classList.remove('bg-transparent', 'border-transparent');
   }
 
