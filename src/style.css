@@ -47,7 +47,7 @@
 }
 
 .hero-content {
-  @apply relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-12 md:pt-32 md:pb-24 w-full;
+  @apply relative z-10 max-w-6xl mx-auto px-6 pt-36 pb-12 md:pt-32 md:pb-24 w-full;
 }
 
 /* GSAP utility classes — initial state set to 0 in CSS to prevent FOUC / flicker */
@@ -220,4 +220,12 @@ html.is-animating .transition-fade {
     border-color: var(--color-brand-accent) !important;
     transition: none;
   }
+}
+
+/* Hide header subtext on scroll to save space and prevent overlap */
+#main-header.scrolled a.group span.text-\[0\.74rem\] {
+  display: none !important;
+}
+#main-header.scrolled a.group span.text-\[0\.76rem\] {
+  display: none !important;
 }
