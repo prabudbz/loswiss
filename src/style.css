@@ -220,6 +220,24 @@ html.is-animating .transition-fade {
     border-color: var(--color-brand-accent) !important;
     transition: none;
   }
+  /* Tap active states for CTA link buttons, forms, and back-to-top */
+  a[href*="services.html"]:active,
+  a[href*="contact.html"]:active,
+  #back-to-top:active,
+  button[type="submit"]:active,
+  #mobile-menu-btn:active span {
+    background-color: var(--color-brand-accent) !important;
+    color: var(--color-brand-dark) !important;
+    border-color: var(--color-brand-accent) !important;
+    transform: scale(0.95) !important;
+    transition: none !important;
+  }
+  /* Ensure icon turns dark inside active link buttons on tap */
+  a[href*="services.html"]:active i,
+  a[href*="contact.html"]:active i,
+  button[type="submit"]:active i {
+    color: var(--color-brand-dark) !important;
+  }
 }
 
 /* Scale down header subtext on scroll to match LOSWISS percentage (25% reduction) */
