@@ -1,0 +1,23 @@
+{
+  "name": "loswiss-bank",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "@swup/head-plugin": "^2.3.1",
+    "@swup/scripts-plugin": "^2.1.0",
+    "@tailwindcss/vite": "^4.3.0",
+    "gsap": "^3.15.0",
+    "lucide": "^1.17.0",
+    "swup": "^4.9.1",
+    "tailwindcss": "^4.3.0"
+  }
+}

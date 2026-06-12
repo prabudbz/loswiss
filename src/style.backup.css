@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #0d1117; 
+  --color-brand-primary: #161b22; 
+  --color-brand-accent: var(--theme-accent, #5b9ac6); /* Dynamic accent color */
+  --color-brand-light: #fafafa;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-logo: "Oswald", sans-serif;
+}
+
+:root {
+  --theme-accent: #5b9ac6; /* Blue default */
+}
+
+:root.theme-gold {
+  --theme-accent: #c5a365; /* Gold alternative */
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-brand-light font-sans antialiased overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-brand-dark;
+  }
+  
+  /* Make secondary text more readable */
+  p {
+    @apply text-gray-700;
+  }
+}
+
+/* Premium aesthetic details inspired by Lombard Odier */
+.glass-panel {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.section-padding {
+  @apply py-24 px-6 md:px-12 lg:px-24;
+}
+
+.hero-section {
+  @apply min-h-screen flex flex-col justify-center relative bg-brand-dark text-white overflow-hidden;
+}
+
+.hero-content {
+  @apply relative z-10 max-w-6xl mx-auto px-6 pt-32 w-full;
+}
+
+/* GSAP utility classes — initial state set to 0 in CSS to prevent FOUC / flicker */
+.reveal-text {
+  opacity: 0;
+}
+
+.reveal-card {
+  opacity: 0;
+}
+
+/* Swup Transition Styles */
+/* We will use a fade transition for Swup */
+.transition-fade {
+  transition: 0.12s ease-out;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+/* Header link animations */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-brand-accent);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Fullscreen Overlay */
+#mobile-menu {
+  clip-path: circle(0% at top right);
+  transition: clip-path 0.5s ease-in-out;
+}
+#mobile-menu.is-open {
+  clip-path: circle(150% at top right);
+}
+
+.lucide {
+  stroke-width: 1.5;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+}
+
+/* Hover animation for icon inside cards */
+.group:hover .lucide {
+  transform: scale(1.15) rotate(8deg);
+  color: var(--color-brand-accent);
+}
+
+/* Fix contact page icon hover where wrapper turns to brand accent background and text color turns white */
+.group:hover .group-hover\:text-white .lucide,
+.group:hover .group-hover\:text-white > .lucide {
+  color: #ffffff !important;
+}
+
